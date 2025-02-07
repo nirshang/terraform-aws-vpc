@@ -34,3 +34,15 @@ variable "public_subnet_cidr" {
 variable "public_subnet_tags" {
    default = {}
 }
+
+variable "private_subnet_cidr" {
+  type = list
+   validation {
+     condition     = length(var.private_subnet_cidr) == 2
+     error_message = "Please provide 2 valid private subnet CIDR"
+  }
+}
+
+variable "private_subnet_tags" {
+   default = {}
+}
