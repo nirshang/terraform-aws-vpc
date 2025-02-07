@@ -19,3 +19,18 @@ variable "common_tags"{
     type = map
     #default = {}
 }
+variable "igw_tags" {
+  default = {}
+}
+
+variable "public_subnet_cidr" {
+  type = list
+   validation {
+     condition     = length(var.public_subnet_cidr) == 2
+     error_message = "Please provide 2 valid public subnet CIDR"
+  }
+}
+
+variable "public_subnet_tags" {
+   default = {}
+}
