@@ -46,3 +46,19 @@ variable "private_subnet_cidr" {
 variable "private_subnet_tags" {
    default = {}
 }
+
+variable "database_subnet_cidr" {
+  type = list
+   validation {
+     condition     = length(var.database_subnet_cidr) == 2
+     error_message = "Please provide 2 valid database subnet CIDR"
+  }
+}
+
+variable "database_subnet_tags" {
+   default = {}
+}
+
+variable "nat_gateway_tags" {
+  default = {}
+}
