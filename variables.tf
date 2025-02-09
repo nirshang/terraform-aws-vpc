@@ -62,3 +62,15 @@ variable "database_subnet_tags" {
 variable "nat_gateway_tags" {
   default = {}
 }
+
+variable "public_route_table_tags" {
+  default = {}
+}
+
+variable "private_route_table_tags" {
+  default = {}
+}
+
+variable "database_route_table_tags" {
+  default = {}
+}
